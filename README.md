@@ -1,6 +1,6 @@
 - 👋 Hi, I’m @jacksonmcafee1
-- 👀 I’m interested in game design and systems management
-- 🌱 I’m currently learning C++ (and UE4) & Rust
+- 👀 I’m interested in software development and systems management
+- 🌱 I’m currently learning C++, Ruby, & Rust
 - 💞️ I’m looking to collaborate on anything really! 
 - 📫 How to reach me 
   - @jacksonmcafee on Instagram
