@@ -2,18 +2,27 @@
 #include <cstdlib>
 #include <string> 
 
+int random(int min, int max) //range : [min, max]
+{
+   static bool first = true;
+   if (first) 
+   {  
+      srand( time(NULL));
+      first = false;
+   }
+   return min + rand() % (( max + 1 ) - min);
+}
+
 using namespace std;
 
 const string variables[6] = {"a", "b", "c", "x", "y", "z"};
 
 string prob_gen::generateProblem() {
-    string a = to_string((rand() % 10));
-    string b = to_string((rand() % 10));
-    string c = to_string((rand() % 10));
-    string d = to_string((rand() % 10));
+    string a = to_string(random(1,10)), b = to_string(random(1,10));
+    string c = to_string(random(1,10)), d = to_string(random(1,10));
     int format = rand() % 5;
     string problem_string;
-    string myVar = variables[(rand() % 7)];
+    string myVar = variables[(random(0,5))];
     switch(format) {
 	case 1:
 	    problem_string = a+myVar+" = "+b;
@@ -25,7 +34,7 @@ string prob_gen::generateProblem() {
 	    problem_string = a+"("+myVar+"+"+b+")"+" = "+c+myVar+" - "+ d;
 	    break;
 	case 4:
-	    problem_string = a+"("+b+"-"+myVar+" = "+c+myVar+ " + "+d;
+	    problem_string = a+"("+b+"-"+myVar+") = "+c+myVar+ " + "+d;
 	    break;
 	case 5:
 	    problem_string = a+myVar+" - "+b+" = "+c+myVar+ " - "+ myVar;
