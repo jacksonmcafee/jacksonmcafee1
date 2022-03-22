@@ -19,7 +19,7 @@ void init_file::CreateFile() {
 
 bool init_file::AddToFile(string questions) {
     fstream fs;
-    fs.open(filename);
+    fs.open(filename, ios::app);
     if(fs.is_open()) {
 	fs << questions;
 	fs.close();

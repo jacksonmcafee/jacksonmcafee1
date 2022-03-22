@@ -18,8 +18,14 @@ cin >> name;
 
 init_file file;
 file.setFileName(name);
+if(!file.FileCreated()) {
+    file.CreateFile();
+}
 
-cout << file.getFileName() << endl;
+prob_gen gen;
+for(int i = 0; i < questions_to_gen; i++) {
+    file.AddToFile(gen.generateProblem() + " \n");
+}
 
 return 0;
 }
