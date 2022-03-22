@@ -4,8 +4,7 @@ using namespace std;
 
 bool init_file::FileCreated() {
     fstream fs;
-    string temp = filename + ".txt";
-    fs.open(temp);
+    fs.open(filename);
     if(fs.is_open()) {
 	fs.close();
 	return true; }
@@ -15,13 +14,22 @@ bool init_file::FileCreated() {
 }
 
 void init_file::CreateFile() {
-    string temp = filename + ".txt";
-    ofstream outputFile(temp);
+    ofstream outputFile(filename);
 }
 
+bool init_file::AddToFile(string questions) {
+    fstream fs;
+    fs.open(filename);
+    if(fs.is_open()) {
+	fs << questions;
+	fs.close();
+	return true; }
+    else {
+	return false; }
+}
 
 void init_file::setFileName(string newFileName) {
-    filename = newFileName;
+    filename = newFileName + ".txt";
 }
 
 string init_file::getFileName() {

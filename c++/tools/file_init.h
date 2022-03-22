@@ -10,6 +10,7 @@ private:
 public: 
 	bool FileCreated();
 	void CreateFile();
+	bool AddToFile(string);	
 
 	void setFileName(string);
 	string getFileName();
