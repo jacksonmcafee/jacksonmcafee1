@@ -10,7 +10,7 @@ private:
 	string prob_type;
 public:
 	string generateProblem();
-	void typeSelect()
+	void typeSelect(string temp);
 
 	void setProblems(int);
 	int getProblems();

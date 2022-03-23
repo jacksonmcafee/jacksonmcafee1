@@ -22,7 +22,7 @@ string prob_gen::generateProblem() {
     string c = to_string(random(1,10)), d = to_string(random(1,10));
     int format = random(1,5);
     string problem_string;
-    string myVar = variables[(random(0,5)];
+    string myVar = variables[random(0,5)];
     switch(format) {
 	case 1:
 	    problem_string = a+myVar+" = "+b;
@@ -46,8 +46,9 @@ string prob_gen::generateProblem() {
     return problem_string; 
 }
 
-void prob_gen::typeSelect() {
-    
+void prob_gen::typeSelect(string temp) {
+    if(temp != prob_type) {
+    	prob_type = temp; }
 }
 
 void prob_gen::setProblems(int prob_num) {
