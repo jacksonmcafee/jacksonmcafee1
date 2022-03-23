@@ -20,9 +20,9 @@ const string variables[6] = {"a", "b", "c", "x", "y", "z"};
 string prob_gen::generateProblem() {
     string a = to_string(random(1,10)), b = to_string(random(1,10));
     string c = to_string(random(1,10)), d = to_string(random(1,10));
-    int format = rand() % 5;
+    int format = random(1,5);
     string problem_string;
-    string myVar = variables[(random(0,5))];
+    string myVar = variables[(random(0,5)];
     switch(format) {
 	case 1:
 	    problem_string = a+myVar+" = "+b;
@@ -42,9 +42,12 @@ string prob_gen::generateProblem() {
 	default:
 	    problem_string = a+myVar+" + "+b+ " = "+ d;
 	};   
-	// debug
 
     return problem_string; 
+}
+
+void prob_gen::typeSelect() {
+    
 }
 
 void prob_gen::setProblems(int prob_num) {
