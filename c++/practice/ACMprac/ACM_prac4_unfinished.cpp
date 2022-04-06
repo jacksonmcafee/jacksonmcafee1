@@ -17,10 +17,6 @@ for(int i = 0; i < in_string.size(); i++) {
     swap_string[i] = in_string[i];
 }
 
-
-
-
-
 // return logic
 if(isPal) { 
     cout << "palindrome" << endl;
