@@ -3,17 +3,21 @@ using namespace std;
 
 void showBoard(int board[9][9]);
 void populateBoard(int board[9][9]);
+bool boardIsLegal(int board[9][9]);
+void solveBoard(int board[9][9]);
 
 int main() {
   // initialize 2D array "board"
   int solve_board[9][9];
-  for(int i = 0; i < 9; i++) {
-    for(int j = 0; j < 9; j++) {
-      solve_board[i][j] = 0;
-    }
+
+  /* TO DO void menu(); */
+
+  // allow user to populate board with data
+  while(boardIsLegal() != true) {
+    populateBoard(solve_board);
   }
 
-  populateBoard(solve_board);
+
 
   return 0;
 }
@@ -27,8 +31,13 @@ void showBoard(int board[9][9]) {
     cout << endl;
   }
 }
-
+// allows user to input board information
 void populateBoard(int board[9][9]) {
+  for(int i = 0; i < 9; i++) {
+    for(int j = 0; j < 9; j++) {
+      solve_board[i][j] = 0;
+    }
+  }
   cout << "Input each row 9 characters at a time." << endl;
   cout << "When you reach a blank space, input a zero instead." << endl;
   for(int i = 0; i < 9; ++i) {
