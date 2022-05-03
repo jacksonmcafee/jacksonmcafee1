@@ -17,7 +17,7 @@ int main() {
     populateBoard(solve_board);
   }
 
-
+  /* TO DO void solveBoard(); */
 
   return 0;
 }
@@ -31,6 +31,7 @@ void showBoard(int board[9][9]) {
     cout << endl;
   }
 }
+
 // allows user to input board information
 void populateBoard(int board[9][9]) {
   for(int i = 0; i < 9; i++) {
@@ -54,3 +55,12 @@ void populateBoard(int board[9][9]) {
     }
   }
 }
+
+// checks if board provided is valid
+bool boardIsLegal(int board[9][9]) {
+
+// check if row is legal
+  for (int i = 0; i < 9; i++) {
+
+    }
+  }
