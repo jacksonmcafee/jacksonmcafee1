@@ -19,6 +19,7 @@ int main() {
   }
 
   /* TO DO void solveBoard(); */
+  solveBoard(solve_board);
 
   return 0;
 }
@@ -60,7 +61,7 @@ void populateBoard(int board[9][9]) {
 // checks if board provided is valid
 bool boardIsLegal(int board[9][9]) {
 
-// check if board is legal
+// check if board is legal along rows and columns
   for(int i = 0; i < 9; i++) {
       for(int j = 0; j < 9; j++) {
         int temp = board[i][j];
@@ -87,10 +88,43 @@ bool boardIsLegal(int board[9][9]) {
       }
     }
 
+  // check if board is legal along 3x3 boxes
+
+  // outer loop n creates multiples of 3
+  for(int n = 0; n < 3; n++) {
+    // inner loops iterate through the 3x3 boxes
+    for (int i = 0; i < 3; i++) {
+      for(int j = 0; j < 3; j++) {
+        // temp is selected box, now check rest of box
+        int temp = board[i+3*n][j+3*n];
+        cout << "Checking (r,c): " << i+3*n + 1 << "," << j+3*n + 1 << endl;
+        if(temp == 0) {
+          goto NEXT2;
+        }
+        for(int k = 0; k < 3; k++) {
+          for(int l = 0; l < 3; l++) {
+            if(temp == board[k+3*n][l+3*n] && k != i && l != j) {
+              cout << "Board is invalid. 3x3 Error." << endl;
+              cout << "Error at row ";
+              cout << k+1 << ", column " << l+1 << endl;
+              return false;
+            }
+          }
+        }
+        NEXT2:
+        cout << "";
+      }
+    }
+  }
+
   /* TO DO: let user fix board when error is found */
   /* maybe just cin AT that location and check entire board after */
   /* else add an iterator array [i, j] and return it as index */
   /* also need to check that function is efficient */
 
   return true;
+}
+
+void solveBoard(int board[9][9]) {
+
 }
