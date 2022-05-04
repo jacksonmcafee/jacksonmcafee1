@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 void showBoard(int board[9][9]);
@@ -89,7 +90,22 @@ bool boardIsLegal(int board[9][9]) {
     }
 
   // check if board is legal along 3x3 boxes
+  for(int i = 0; i < 9; i++) {
+    for(int j = 0; j < 9; j++) {
+      // selects cell
+      int temp = board[i][j];
+      // gets corresponding 3x3 grid coordinates
+      int n = floor(i/3), int m = floor(j/3);
+      // now just check that 3x3 grid for dupes
+      
+    }
+  }
 
+
+
+
+
+/*
   // outer loop n creates multiples of 3
   for(int n = 0; n < 3; n++) {
     // inner loops iterate through the 3x3 boxes
@@ -121,6 +137,7 @@ bool boardIsLegal(int board[9][9]) {
   /* maybe just cin AT that location and check entire board after */
   /* else add an iterator array [i, j] and return it as index */
   /* also need to check that function is efficient */
+*/
 
   return true;
 }
