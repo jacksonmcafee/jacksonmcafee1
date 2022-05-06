@@ -105,7 +105,7 @@ bool boardIsLegal(int board[9][9]) {
       for(int a = 0; a < 3; a++) {
         for(int b = 0; b < 3; b++) {
           if(temp == board[a+3*n][b+3*m] && a+3*n != i && b+3*m != j) {
-            cout << "Failed at in grid " << n+1 << "/" << m+1 << endl;
+            cout << "Failed at (" << a+3*n+1 << "," << b+3*m+1 << ")" << endl;
             return false;
           }
         }
