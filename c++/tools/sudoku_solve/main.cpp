@@ -92,53 +92,32 @@ bool boardIsLegal(int board[9][9]) {
   // check if board is legal along 3x3 boxes
   for(int i = 0; i < 9; i++) {
     for(int j = 0; j < 9; j++) {
+      // gets corresponding 3x3 grid coordinates
+      int n = floor(i/3);
+      int m = floor(j/3);
       // selects cell
       int temp = board[i][j];
-      // gets corresponding 3x3 grid coordinates
-      int n = floor(i/3), int m = floor(j/3);
+      cout << "Testing (" << i+1 << "," << j+1 << ")" << endl;
+      if(temp == 0) {
+        goto NEXT2;
+      }
       // now just check that 3x3 grid for dupes
-      
-    }
-  }
-
-
-
-
-
-/*
-  // outer loop n creates multiples of 3
-  for(int n = 0; n < 3; n++) {
-    // inner loops iterate through the 3x3 boxes
-    for (int i = 0; i < 3; i++) {
-      for(int j = 0; j < 3; j++) {
-        // temp is selected box, now check rest of box
-        int temp = board[i+3*n][j+3*n];
-        cout << "Checking (r,c): " << i+3*n + 1 << "," << j+3*n + 1 << endl;
-        if(temp == 0) {
-          goto NEXT2;
-        }
-        for(int k = 0; k < 3; k++) {
-          for(int l = 0; l < 3; l++) {
-            if(temp == board[k+3*n][l+3*n] && k != i && l != j) {
-              cout << "Board is invalid. 3x3 Error." << endl;
-              cout << "Error at row ";
-              cout << k+1 << ", column " << l+1 << endl;
-              return false;
-            }
+      for(int a = 0; a < 3; a++) {
+        for(int b = 0; b < 3; b++) {
+          if(temp == board[a+3*n][b+3*m] && a+3*n != i && b+3*m != j) {
+            cout << "Failed at in grid " << n+1 << "/" << m+1 << endl;
+            return false;
           }
         }
-        NEXT2:
-        cout << "";
       }
+      NEXT2:
+      continue;
     }
   }
-
   /* TO DO: let user fix board when error is found */
   /* maybe just cin AT that location and check entire board after */
   /* else add an iterator array [i, j] and return it as index */
   /* also need to check that function is efficient */
-*/
-
   return true;
 }
 
