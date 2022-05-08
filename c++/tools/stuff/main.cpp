@@ -1,39 +1,35 @@
-// library includes
 #include <iostream>
-#include <string>
+#include <random>
 #include <chrono>
-#include <cstdlib>
+#include <string>
+#include <thread>
+#include <algorithm>
 
 using namespace std;
 
-// function definitions
-void print(string str);
+string random_string(int max);
 
-// main definition
 int main() {
+  int max;
+  cout << "Input your desired key length: " << endl;
+  cin >> max;
 
-
-  print(cool);
-
+  srand(time(NULL));
+  for(int i = 0; i < 1000; i++) {
+    cout << i+1 << ". " << random_string(max) << endl;
+    std::this_thread::sleep_for(300ms);
+    }
+  return 0;
 }
 
-void print(string str) {
+string random_string(int max)
+{
+     string str("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%&+=./?");
 
-  float progress = 0.0;
-  while (progress < 1.0) {
-    int barWidth = 70;
+     std::random_device rd;
+     std::mt19937 generator(rd());
 
-    std::cout << "[";
-    int pos = barWidth * progress;
-    for (int i = 0; i < barWidth; ++i) {
-        if (i < pos) std::cout << "=";
-        else if (i == pos) std::cout << ">";
-        else std::cout << " ";
-    }
-    std::cout << "] " << int(progress * 100.0) << " %\r";
-    std::cout.flush();
+     std::shuffle(str.begin(), str.end(), generator);
 
-    progress += ((float) rand()/RAND_MAX);
-  }
-std::cout << std::endl;
+     return str.substr(0, max);    // assumes 32 < number of characters in str
 }
