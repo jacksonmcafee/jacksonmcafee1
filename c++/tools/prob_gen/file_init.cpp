@@ -28,6 +28,8 @@ bool init_file::AddToFile(string questions) {
 	return false; }
 }
 
+// probably unnecessary, just let user input their desired
+// filetype during init, if isn't supported just throw an error
 void init_file::setFileName(string newFileName) {
     filename = newFileName + ".txt";
 }
