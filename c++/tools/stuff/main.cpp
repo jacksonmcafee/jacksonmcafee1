@@ -15,9 +15,9 @@ int main() {
   cin >> max;
 
   srand(time(NULL));
-  for(int i = 0; i < 1000; i++) {
+  for(int i = 0; i < 100000; i++) {
     cout << i+1 << ". " << random_string(max) << endl;
-    std::this_thread::sleep_for(300ms);
+    std::this_thread::sleep_for(std::chrono::milliseconds(300));
     }
   return 0;
 }
