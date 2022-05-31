@@ -1,0 +1,6 @@
+"cargo new ___" - creates a new project with target name after new
+"cargo build" - used within cargo project, builds project into executable into target/debug/
+  - the "--release" flag can adds extra optimizations and exe lands in target/release/
+  - does take longer than build, used primarily for release versions of a project
+"cargo run" - used within cargo project, builds AND runs project in one step
+"cargo check" - used within cargo project, builds project but does not produce executable
