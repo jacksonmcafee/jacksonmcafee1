@@ -10,6 +10,8 @@ fn main() {
     // generates a random number from 1-100 inclusive
     // .gen_range(1..=100) is equivalent to .gen_range(1..101)
     let secret_number = rand::thread_rng().gen_range(1..101);
+
+    // loop continues until error is thrown or break statement
     loop {
         println!("Please input your guess.");
 
@@ -35,12 +37,16 @@ fn main() {
     // same as io::stdin().read_line(&mut guess).expect("Failed to read line");
     // easier to read if broken up into multiple lines
 
-            let guess: u32 = guess.trim().parse().expect("Please type a number!");
+            let guess: u32 = match guess.trim().parse() {
+                Ok(num) => num,
+                Err(_) => continue,
+            };
             // we are overwriting (shadowing) the "guess" variable declared earlier
             // now we don't need to create a new var that does the same thing as "guess"
             // .trim() will remove additional whitespace from the front and back of "guess"
             // .parse() will parse the string "guess" into a number "guess" (u32)
-            // .expect() is again here in order to crash the program safely just in case
+            // parse returns a Result value, which determines if the user's input is valid
+            // or not, if valid it will continue to match cmp, else user needs a new input
 
         // {} act as placeholders for variables, instead of
         // cout << "The variable is " << var << endl;
