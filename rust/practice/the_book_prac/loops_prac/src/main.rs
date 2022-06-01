@@ -22,7 +22,30 @@ fn main() {
 }
 
 fn temp_conv(x: i32) {
-    println!("Temp Conv!");
+    println!("Input 1 for C -> F or 2 for F -> C.");
+    let mut temp: f64 = x.into();
+
+    let mut user_input = String::new();
+    io::stdin()
+    .read_line(&mut user_input)
+    .expect("Invalid input!");
+
+    let user_input: u32 = {
+        user_input.trim()
+        .parse()
+        .expect("Something failed")
+    };
+
+    if user_input == 1 {
+        // C -> F
+        temp = (temp * 1.8) + 32.0;
+        println!("The temperature is {}", temp);
+    }
+    else if user_input == 2 {
+        // F -> C
+        temp = (temp - 32.0) * (0.5556);
+        println!("The temperature is {}", temp);
+    }
 }
 
 fn fibonacci() {
