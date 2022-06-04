@@ -1,5 +1,5 @@
 fn main() {
-    let s = "hello"; // this string literal cannot be mutated
+    let _s = "hello"; // this string literal cannot be mutated
     let mut s_mutable = String::from("hello"); // this String can be mutated
 
     s_mutable.push_str(", world!"); // push_str() appends a literal to a String
@@ -9,12 +9,12 @@ fn main() {
 
 fn scope_example() {
     {
-        // s is not valid here, it’s not yet declared
-        let s = "hello";
-        // s is valid from this point forward
-        // do stuff with s
+        // _s is not valid here, it’s not yet declared
+        let _s = "hello";
+        // _s is valid from this point forward
+        // do stuff with _s
     }
-    // this scope is now over, and s is no longer valid
+    // this scope is now over, and _s is no longer valid
 }
 
 /*
