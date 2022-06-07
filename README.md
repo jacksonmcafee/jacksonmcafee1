@@ -1,2 +1,2 @@
 # jacksonmcafee1
-this is all literally just incoherent code snippets I am so sorry
+lots of funny code snippets here :)
