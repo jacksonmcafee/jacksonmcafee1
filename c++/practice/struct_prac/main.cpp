@@ -1,17 +1,17 @@
 #include <iostream>
+#include <fstream>
+#include <string>
 #include "item.h"
 
-using namespace std;
+const std::string CONFIG_FILE = "inventory.csv";
+
+void menu() {
+
+}
 
 int main() {
 
-item notebook;
-notebook.item_id = 1;
-notebook.item_name = "notebook";
-notebook.item_price = 4.99;
-notebook.item_kg = 0.28;
-
-cout << "The notebook is $" << notebook.item_price << "." << endl;
-
-return 0;
+return 0;    
 }
+
+
