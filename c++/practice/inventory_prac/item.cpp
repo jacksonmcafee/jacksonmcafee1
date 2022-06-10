@@ -20,4 +20,17 @@ bool item_manager::del_stock(int id) {
 
 }
 
+void item_manager::print_item_details(int id) {
+// print id, name, price, stock
 
+}
+
+int item_manager::search_for_item(std::string item_name) {
+// uses string item_name to search for item ID
+
+}
+
+std::map<int, std::string> item_manager::load_inventory(std::string config_filename) {
+
+
+}

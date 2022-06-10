@@ -18,4 +18,7 @@ class item_manager {
 	// first maps id --> (name, price, stock) <string, float, int>
 	// second maps name --> id
 	std::map<int, std::string> load_inventory(std::string config_filename);
+
+
+
 };
