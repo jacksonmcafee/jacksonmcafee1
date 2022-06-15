@@ -3,10 +3,11 @@
 
 class item_manager {
     public:
+
 	bool add_item(int id);
+	bool mod_item(int id);
 	bool del_item(int id);
-	bool add_stock(int id);
-	bool del_stock(int id);
+	bool mod_stock(int id);
 	
 	// uses id as map key, prints id, name, price, stock
         void print_item_details(int id);

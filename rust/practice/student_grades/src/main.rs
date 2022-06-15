@@ -37,12 +37,12 @@ fn main() {
     // getline
     let course_name: String = read!("{}\n");
 */
-    let daniel: Person = Person::add_student();
+    let daniel: Person = Person::add_person(Student);
     println!("Added {} {} as {}.",
     daniel.first_name, daniel.last_name,
     daniel.role.get_role());
 
-    let ethan: Person = Person::add_instructor();
+    let ethan: Person = Person::add_person(Instructor);
     println!("Added {} {} as {}.",
     ethan.first_name, ethan.last_name,
     ethan.role.get_role());
