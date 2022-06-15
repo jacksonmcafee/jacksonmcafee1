@@ -1,11 +1,12 @@
-use crate::structures::Person;
-use crate::structures::Course;
-use crate::structures::Roles::Instructor;
-use crate::structures::Roles::
-
 mod structures;
 
+use crate::structures::*;
+use crate::structures::Roles::*;
+
 fn main() {
+
+
+    // testing
     let jackson = Person {
         active: true,
         role: Instructor,
@@ -15,9 +16,34 @@ fn main() {
         id: 1001,
     };
 
+    let dennis = Person {
+        active: true,
+        role: Instructor,
+        first_name: String::from("Dennis"),
+        last_name: String::from("Dustman"),
+        grade_level: 12,
+        id: 1002,
+    };
+
     let enc1101 = Course {
         name: String::from("English 1"),
         instructor: jackson
     };
 
+/*
+    // gets until whitespace
+    let course_name: String = read!();
+
+    // getline
+    let course_name: String = read!("{}\n");
+*/
+    let daniel: Person = Person::add_student();
+    println!("Added {} {} as {}.",
+    daniel.first_name, daniel.last_name,
+    daniel.role.get_role());
+
+    let ethan: Person = Person::add_instructor();
+    println!("Added {} {} as {}.",
+    ethan.first_name, ethan.last_name,
+    ethan.role.get_role());
 }

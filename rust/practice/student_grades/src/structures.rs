@@ -1,3 +1,5 @@
+pub mod functions;
+
 pub struct Person {
     pub active: bool,
     pub role: Roles,
@@ -14,5 +16,6 @@ pub struct Course {
 
 pub enum Roles {
     Student,
-    Instructor
+    Instructor,
+    Admin,
 }
