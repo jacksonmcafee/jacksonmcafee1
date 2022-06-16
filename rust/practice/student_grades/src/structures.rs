@@ -2,7 +2,7 @@ mod struct_functions;
 
 pub struct Person {
     pub active: bool,
-    pub role: Roles,
+    pub role: Role,
     pub first_name: String,
     pub last_name: String,
     pub grade_level: u32,
@@ -14,18 +14,18 @@ pub struct Course {
     pub instructor: Person,
 }
 
-pub enum Roles {
+pub enum Role {
     Student,
     Instructor,
     Admin,
 }
 
-pub enum Subjects {
+pub enum Subject {
     Mathematics,
     Science,
-    Social_Studies,
-    English_Lang,
-    Foreign_Lang,
-    Fine_Arts,
-    Applied_Arts,
+    SocialStudies,
+    EnglishLang,
+    ForeignLang,
+    FineArts,
+    AppliedArts,
 }

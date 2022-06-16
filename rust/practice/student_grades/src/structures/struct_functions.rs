@@ -1,12 +1,12 @@
 use text_io::*;
 
 use crate::structures::*;
-use crate::structures::Roles::*;
+use crate::structures::Role::*;
 use crate::structures::Subject::*;
 
 // Person functions
 impl Person {
-    pub fn add_person(enum_param: Roles) -> Person {
+    pub fn add_person(enum_param: Role) -> Person {
         println!("Input fn, ln, gl, then id:");
         Person {
             active: true,
@@ -28,26 +28,33 @@ impl Person {
 
 // Course functions
 impl Course {
-    pub fn add_course(enum_param: Subject) -> Course {
-        println!("Input cn and ");
-        // need to verify if passed Person is
-        // a valid instructor (both active & instructor)
-        Course {
-            name: read!(),
-            // need to make read!() work with Person
-            instructor: read!(),
-        }
-    }
+    // pub fn add_course(enum_param: Subject) -> Course {
+        // do something
+    // }
 }
 
 
-// TODO: Role-based functions
-impl Roles {
-    pub fn get_role(&self) -> String {
+// Role-based functions
+impl Role {
+    pub fn get_role_str(&self) -> String {
         match self {
             Student => String::from("Student"),
             Instructor => String::from("Instructor"),
             Admin => String::from("Admin"),
+        }
+    }
+}
+
+impl Subject {
+    pub fn get_subj_str(&self) -> String {
+        match self {
+            Mathematics => String::from("Mathematics"),
+            Science => String::from("Science"),
+            SocialStudies => String::from("Social Studies"),
+            EnglishLang => String::from("English Language"),
+            ForeignLang => String::from("Foreign Language"),
+            FineArts => String::from("Fine Arts"),
+            AppliedArts => String::from("Applied Arts"),
         }
     }
 }

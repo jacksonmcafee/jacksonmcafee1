@@ -1,12 +1,14 @@
 mod structures;
+mod gen_functions;
 
 use crate::structures::*;
-use crate::structures::Roles::*;
+use crate::structures::Role::*;
 
 fn main() {
 
 
     // testing
+
     let jackson = Person {
         active: true,
         role: Instructor,
@@ -30,6 +32,8 @@ fn main() {
         instructor: jackson
     };
 
+
+
 /*
     // gets until whitespace
     let course_name: String = read!();
@@ -37,13 +41,16 @@ fn main() {
     // getline
     let course_name: String = read!("{}\n");
 */
+
+/*
     let daniel: Person = Person::add_person(Student);
     println!("Added {} {} as {}.",
     daniel.first_name, daniel.last_name,
-    daniel.role.get_role());
+    daniel.role.get_role_str());
 
     let ethan: Person = Person::add_person(Instructor);
     println!("Added {} {} as {}.",
     ethan.first_name, ethan.last_name,
-    ethan.role.get_role());
+    ethan.role.get_role_str());
+*/
 }
