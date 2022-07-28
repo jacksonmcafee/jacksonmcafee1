@@ -1,35 +1,32 @@
 use text_io::*;
-use std::str::FromStr;
 
-#[derive(Debug)]
-pub enum Menu {
+enum Menu {
     Search,
     Modify,
+    Error,
 }
 
-impl FromStr for Menu {
-    type Err = ();
-
+impl Menu {
     fn find_menu_from_str(input_str: &str) -> Menu {
         match input_str {
-            "Search" => Menu::Search,
-            "Modify" => Menu::Modify,
-            _ => Err(()),
+            "search" => Menu::Search,
+            "modify" => Menu::Modify,
+            _ => Menu::Error,
+            }
         }
-    }
 }
+
+// use to_lowercase() to go from str -> String, th
 
 fn main() {
-    
-}
+    let temp_input: String = read!().to_lowercase();
+    // let temp_input = temp_input.to_lowercase();
+    let user_input = temp_input.as_str();
+    let user_selection: Menu = Menu::find_menu_from_str(user_input);
 
-// menu function first
-fn menu() -> Menu {
-    println!("Welcome to the program!");
-    println!("Type 'Search' to enter the search menu.");
-    println!("Type 'Modify' to enter the modification menu.");
-
-    let user_input: String = read!();
-    let user_selection: Menu = find_menu_from_str(user_input);
-    return user_selection
+    match user_selection {
+    Menu::Search => println!("Search Menu"),
+    Menu::Modify => println!("Modify Menu"),
+    Menu::Error => println!("Error occured. Try again."),
+    }
 }
