@@ -5,6 +5,8 @@ I wish I had stringstream...
 However, that's my first Java program down!
 */
 
+// TODO: Add punctuation and proper capitalization rules!
+
 import java.util.Scanner;
 
 public class StringReversal {

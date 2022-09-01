@@ -53,44 +53,27 @@ def difficultySelect():
     return difficulty
 
 # practice problem generators (maybe add simple vers for speed)
-def easyPractice():
+def easyPractice(operation):
     # single digit x single digit
     firstNum = random.randint(1,9)
     secondNum = random.randint(1,9)
     product = firstNum * secondNum
     return [firstNum, secondNum, product]
     
-def mediumPractice():
+def mediumPractice(operation):
     # single digit x double digit
     firstNum = random.randint(1,9)
     secondNum = random.randint(10, 99)
     product = firstNum * secondNum
     return [firstNum, secondNum, product]
     
-def hardPractice():
+def hardPractice(operation):
     # double digit x double digit
     firstNum = random.randint(10, 99)
     secondNum = random.randint(10, 99)
     product = firstNum * secondNum
     return [firstNum, secondNum, product]
     
-# operation functions
-def addition(a, b):
-    sum1 = a + b
-    return sum1
-    
-def subtraction(a, b):
-    difference = a - b
-    return difference
-    
-def multiplication(a, b):
-    product = a * b
-    return product
-    
-def division(a, b):
-    quotient = a / b
-    return quotient
-
 # problem checking function
 def problemCheck(firstNum, secondNum, product):
     firstNumStr = str(firstNum)
@@ -118,7 +101,6 @@ def main():
     print("Welcome to the math practice tool!")
     operation = operationSelect()
     difficulty = difficultySelect()
-    
     
     # switch to determine difficulty selected
     if (difficulty == 1):
@@ -162,5 +144,5 @@ if __name__ == "__main__":
             solveAgain = False
             print("Your average solve time is " + str(round((solveTimeTotal/solveTotal), 3)) + " with " + str(solveTotal) + " solves.")
 
-    print("Thank you for using the multiplication practice tool!")
+    print("Thank you for using the math practice tool!")
     
