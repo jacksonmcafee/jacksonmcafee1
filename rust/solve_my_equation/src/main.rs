@@ -38,7 +38,3 @@ fn main() {
 
 }
 
-fn solve_function(s: &str) -> &str {
-    let my_str = s.clone();
-    return my_str;
-}
