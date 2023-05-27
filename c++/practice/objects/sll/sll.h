@@ -15,7 +15,7 @@ class SLL<T> {
 		// node constructor
 		Node(T temp) {
 			val = temp;
-			next == nullptr;
+			next = nullptr;
 		}
 	};
 
