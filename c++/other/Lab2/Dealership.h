@@ -1,6 +1,5 @@
 #include <string>
-#include "Showroom.h"
-#include "Vehicle.h"
+#include <vector>
 
 class Dealership {
     private:
@@ -28,17 +27,25 @@ class Dealership {
         }
 
         float GetAveragePrice() {
-            float aggregatePrice = 0;
+            float aggregatePrice = 0, carCount = 0;
             for (Showroom s : _showrooms) {
                 aggregatePrice += s.GetInventoryValue();
+                carCount += (static_cast<float>(s.GetVehicleList().size()));
             }
-            return (aggregatePrice / _numberOfShowrooms);
+            return (aggregatePrice / carCount);
         }
 
         void ShowInventory() {
-            for (Showroom s : _showrooms) {
-                s.ShowInventory();
+            if (_numberOfShowrooms == 0) {
+                std::printf("%s is empty!\n", _name.c_str());
+                std::printf("Average car price: $0.00");
+            } else {
+                for (Showroom s : _showrooms) {
+                    s.ShowInventory();
+                    std::printf("\n");
+                }
+                std::printf("Average car price: $%.2f", GetAveragePrice());
             }
-            printf("Average Price: $%.2f\n", GetAveragePrice());
+
         }
 };

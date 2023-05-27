@@ -25,11 +25,11 @@ class Vehicle {
         }
 
         void Display() {
-              std::printf("%d %s %s $%.2f %d\n", _year, _make.c_str(), _model.c_str(), _price, _mileage);
+              std::printf("%d %s %s $%f %d\n", _year, _make.c_str(), _model.c_str(), _price, _mileage);
         }
 
         std::string GetYearMakeModel() {
-            return (std::to_string(_year) + " " + _make + " " + _model + "\n");
+            return (std::to_string(_year) + " " + _make + " " + _model);
         }
 
         float GetPrice() {

@@ -1,6 +1,5 @@
 #include <string>
 #include <vector>
-#include "Vehicle.h"
 
 class Showroom {
     private:
@@ -23,7 +22,7 @@ class Showroom {
             // check if showroom is full
             if (_numberOfVehicles == _capacity) {
                 // print warning
-                std::printf("Showroom is full! Cannot add %s\n", v.GetYearMakeModel());
+                std::printf("Showroom is full! Cannot add %s", v.GetYearMakeModel().c_str());
             } else {
                 // add vehicle to vector and increment counter
                 _vehicles.push_back(v);
@@ -32,8 +31,14 @@ class Showroom {
         }
 
         void ShowInventory() {
-            for (Vehicle v : _vehicles) {
-                v.Display();
+            if (_numberOfVehicles == 0) {
+                std::printf("%s is empty!\n", _name.c_str());
+            } else {
+                printf("Vehicles in %s\n", _name.c_str());
+                
+                for (Vehicle v : _vehicles) {
+                    v.Display();
+                }
             }
         }
 
